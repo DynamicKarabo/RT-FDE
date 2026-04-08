@@ -7,6 +7,19 @@ namespace FraudEngine.Domain;
 public sealed record RuleDefinition(
     Guid RuleId,
     string RuleName,
-    string RuleReason,
+    RuleType RuleType,
     int ScoreDelta,
-    bool IsActive);
+    bool IsActive)
+{
+    /// <summary>
+    /// Derives the human-readable reason string from the rule type.
+    /// </summary>
+    public string RuleReason => RuleType switch
+    {
+        RuleType.HighAmountAnomaly => RuleReasons.HighAmountAnomaly,
+        RuleType.HighVelocity => RuleReasons.HighVelocity,
+        RuleType.GeoAnomaly => RuleReasons.GeoAnomaly,
+        RuleType.NewDevice => RuleReasons.NewDevice,
+        _ => throw new InvalidOperationException($"Unknown rule type: {RuleType}")
+    };
+}

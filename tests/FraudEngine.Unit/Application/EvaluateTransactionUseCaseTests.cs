@@ -107,9 +107,9 @@ public class EvaluateTransactionUseCaseTests
         _ruleRepositoryMock.Setup(x => x.LoadActiveRulesAsync(It.IsAny<CancellationToken>()))
             .ReturnsAsync(new List<RuleDefinition>
             {
-                new(Guid.NewGuid(), "Amount", RuleReasons.HighAmountAnomaly, 30, true),  // 2500/500 = 5x > 3x
-                new(Guid.NewGuid(), "Velocity", RuleReasons.HighVelocity, 25, true),      // 7 > 5
-                new(Guid.NewGuid(), "Device", RuleReasons.NewDevice, 20, true),           // device-1 not in known
+                new(Guid.NewGuid(), "Amount", RuleType.HighAmountAnomaly, 30, true),  // 2500/500 = 5x > 3x
+                new(Guid.NewGuid(), "Velocity", RuleType.HighVelocity, 25, true),      // 7 > 5
+                new(Guid.NewGuid(), "Device", RuleType.NewDevice, 20, true),           // device-1 not in known
             });
 
         var sut = CreateSut();

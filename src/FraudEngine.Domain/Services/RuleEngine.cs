@@ -44,9 +44,9 @@ public sealed class RuleEngine
         RuleEvaluationThresholds thresholds,
         out RuleMatch match)
     {
-        switch (rule.RuleReason)
+        switch (rule.RuleType)
         {
-            case RuleReasons.HighAmountAnomaly:
+            case RuleType.HighAmountAnomaly:
                 if (behaviour is not null && behaviour.AverageTransactionAmount > 0)
                 {
                     var multiplier = (double)(transaction.Amount / behaviour.AverageTransactionAmount);
@@ -64,7 +64,7 @@ public sealed class RuleEngine
                 }
                 break;
 
-            case RuleReasons.HighVelocity:
+            case RuleType.HighVelocity:
                 if (behaviour is not null && behaviour.TransactionCountLast60s > thresholds.MaxTransactionsPer60s)
                 {
                     match = new RuleMatch(rule.RuleReason, rule.ScoreDelta);
@@ -72,7 +72,7 @@ public sealed class RuleEngine
                 }
                 break;
 
-            case RuleReasons.GeoAnomaly:
+            case RuleType.GeoAnomaly:
                 if (behaviour is not null &&
                     behaviour.LastKnownLatitude.HasValue &&
                     behaviour.LastKnownLongitude.HasValue &&
@@ -93,7 +93,7 @@ public sealed class RuleEngine
                 }
                 break;
 
-            case RuleReasons.NewDevice:
+            case RuleType.NewDevice:
                 if (behaviour is not null &&
                     behaviour.KnownDeviceIds.Count > 0 &&
                     !behaviour.KnownDeviceIds.Contains(transaction.DeviceId))
@@ -110,7 +110,7 @@ public sealed class RuleEngine
                 break;
 
             default:
-                // Unknown rule type — skip to avoid breaking on new rule additions
+                // Unknown rule type — skip to avoid breaking on future additions
                 break;
         }
 

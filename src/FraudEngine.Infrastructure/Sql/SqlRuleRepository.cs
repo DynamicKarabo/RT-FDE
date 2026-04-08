@@ -38,10 +38,20 @@ public sealed class SqlRuleRepository : IRuleRepository
 
         while (await reader.ReadAsync(ct))
         {
+            var ruleReason = reader.GetString(2);
+            var ruleType = ruleReason switch
+            {
+                RuleReasons.HighAmountAnomaly => RuleType.HighAmountAnomaly,
+                RuleReasons.HighVelocity => RuleType.HighVelocity,
+                RuleReasons.GeoAnomaly => RuleType.GeoAnomaly,
+                RuleReasons.NewDevice => RuleType.NewDevice,
+                _ => throw new InvalidOperationException($"Unknown rule reason value: {ruleReason}")
+            };
+
             rules.Add(new RuleDefinition(
                 RuleId: reader.GetGuid(0),
                 RuleName: reader.GetString(1),
-                RuleReason: reader.GetString(2),
+                RuleType: ruleType,
                 ScoreDelta: reader.GetInt32(3),
                 IsActive: reader.GetBoolean(4)));
         }

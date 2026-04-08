@@ -133,3 +133,60 @@ Track unresolved decisions here until they are closed and moved above.
 | OQ-003 | What is the data retention period for `FraudDecisions`? Legal / compliance sign-off required. | Legal | Before go-live |
 | OQ-004 | Is `UserProfiles` table in scope for V1 or deferred? Geo anomaly rule requires historical location data. | Engineering | Sprint 1 |
 | OQ-005 | Hot-reload interval for rule changes — how quickly must a new rule take effect? Real-time? 60s? | Fraud ops | Sprint 2 |
+
+---
+
+## DEC-009 — Polly Resilience for Redis (2 retries, Exponential Backoff)
+
+**Decision:** All Redis operations are wrapped in a Polly retry policy with a maximum of 2 retries and exponential backoff.
+
+**Context:** Transient network blips or Redis failovers must not immediately trigger degraded mode, which reduces scoring accuracy.
+
+**Rationale:** Protecting the 1000+ TPS throughput requires resilience against minor infrastructure fluctuations. 2 retries provide a balance between reliability and the <200ms latency SLA.
+
+**Alternatives:** Fail fast (no retries); circuit breaker (deferred to V2).
+
+**Date:** 2026-04-08
+
+---
+
+## DEC-010 — Standardized API Error Shape (RFC 7807 ProblemDetails)
+
+**Decision:** The API uses the RFC 7807 `ProblemDetails` standard for all error responses.
+
+**Context:** Upstream clients need a predictable, machine-readable format for handling errors (validation, internal failures, etc.).
+
+**Rationale:** Using a standard like `ProblemDetails` ensures consistency across the platform. Ad-hoc JSON payloads for errors are banned to prevent client-side fragmentation.
+
+**Alternatives:** Custom JSON `{ error: "msg" }`.
+
+**Date:** 2026-04-08
+
+---
+
+## DEC-011 — Enum-based Rule Typing (Strict Rule Reasons)
+
+**Decision:** Fraud rule categories are defined using a strictly typed `RuleType` enum.
+
+**Context:** The engine previously relied on magic strings for rule identification, making the system prone to typos and refactoring errors.
+
+**Rationale:** Enums provide compile-time safety and clear documentation of supported signals. Mapping to human-readable reasons is encapsulated in the domain model.
+
+**Alternatives:** String constants (Magic strings).
+
+**Date:** 2026-04-08
+
+---
+
+## DEC-012 — Authentic Health Probes (Redis/SQL Pings)
+
+**Decision:** The `/health/ready` endpoint performs real asynchronous pings to Redis and SQL Server.
+
+**Context:** Kubernetes readiness probes must reflect the actual ability of the pod to process traffic, not just that the process is running.
+
+**Rationale:** Static health checks can lead to routing traffic to "zombie" pods that have lost database connectivity. Authentic probes ensure traffic is only routed to fully functional instances.
+
+**Alternatives:** Static "Healthy" responses.
+
+**Date:** 2026-04-08
+

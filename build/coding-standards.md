@@ -90,9 +90,10 @@ RuleReasons.NewDevice
 
 ## Error Handling
 
-- All unhandled exceptions are caught at the middleware layer and return a `500` with a correlation ID — never a stack trace.
-- Redis failures: catch `RedisConnectionException`; log with correlation ID; continue with reduced scoring.
+- All unhandled exceptions are caught at the middleware layer and return an **RFC 7807 `ProblemDetails`** response — never a stack trace.
+- Redis failures: catch `BehaviourStoreUnavailableException` (re-thrown from infra layer with Polly retries); log with correlation ID; continue with reduced scoring.
 - Every error log must include `transactionId` and `correlationId` as structured fields.
+- **Strict Typing:** All fraud rules must be categorized via the `RuleType` enum. Magic strings for rule identification are banned.
 
 ---
 

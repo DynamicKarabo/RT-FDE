@@ -16,7 +16,10 @@ public sealed class FraudController : ControllerBase
     }
 
     [HttpPost("evaluate")]
-    public async Task<ActionResult<FraudDecisionResponse>> EvaluateAsync(
+    [ProducesResponseType(typeof(FraudDecisionResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
+    public async Task<IActionResult> EvaluateAsync(
         [FromBody] EvaluateTransactionRequest request,
         CancellationToken ct)
     {
@@ -24,7 +27,10 @@ public sealed class FraudController : ControllerBase
 
         if (result.IsFailure)
         {
-            return StatusCode(500, new { error = result.Error?.Message });
+            return Problem(
+                detail: result.Error?.Message,
+                statusCode: StatusCodes.Status500InternalServerError,
+                title: "Fraud evaluation failed");
         }
 
         return Ok(FraudDecisionResponse.FromDomain(result.Value));

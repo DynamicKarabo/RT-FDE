@@ -1,0 +1,26 @@
+# .NET build artifacts
+**/bin/
+**/obj/
+
+# IDE
+.vs/
+.vscode/
+*.user
+*.suo
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test results
+**/TestResults/
+
+# Coverage reports
+coverage-report/
+
+# k6 load test results
+tests/FraudEngine.Load/load-test-results.json
+
+# Local user secrets (dotnet user-secrets)
+secrets.json

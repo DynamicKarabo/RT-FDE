@@ -39,7 +39,7 @@ public class RuleEngineTests
     {
         var txn = DefaultTransaction() with { Amount = 3500m }; // 3.5x avg of 1000
         var behaviour = DefaultBehaviour();
-        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Amount anomaly", RuleReasons.HighAmountAnomaly, 30, true) };
+        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Amount anomaly", RuleType.HighAmountAnomaly, 30, true) };
 
         var matches = _sut.Evaluate(rules, txn, behaviour, _thresholds);
 
@@ -51,7 +51,7 @@ public class RuleEngineTests
     {
         var txn = DefaultTransaction() with { Amount = 2500m }; // 2.5x avg of 1000
         var behaviour = DefaultBehaviour();
-        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Amount anomaly", RuleReasons.HighAmountAnomaly, 30, true) };
+        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Amount anomaly", RuleType.HighAmountAnomaly, 30, true) };
 
         var matches = _sut.Evaluate(rules, txn, behaviour, _thresholds);
 
@@ -62,7 +62,7 @@ public class RuleEngineTests
     public void HighAmountAnomaly_Matches_WhenNoBehaviourAndAmountExceedsAbsolute()
     {
         var txn = DefaultTransaction() with { Amount = 60000m }; // above 50000 absolute threshold
-        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Amount anomaly", RuleReasons.HighAmountAnomaly, 30, true) };
+        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Amount anomaly", RuleType.HighAmountAnomaly, 30, true) };
 
         var matches = _sut.Evaluate(rules, txn, null, _thresholds);
 
@@ -73,7 +73,7 @@ public class RuleEngineTests
     public void HighAmountAnomaly_DoesNotMatch_WhenNoBehaviourAndAmountBelowAbsolute()
     {
         var txn = DefaultTransaction() with { Amount = 2500m }; // below 50000 absolute threshold
-        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Amount anomaly", RuleReasons.HighAmountAnomaly, 30, true) };
+        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Amount anomaly", RuleType.HighAmountAnomaly, 30, true) };
 
         var matches = _sut.Evaluate(rules, txn, null, _thresholds);
 
@@ -86,7 +86,7 @@ public class RuleEngineTests
     public void HighVelocity_Matches_WhenTxnCountExceedsThreshold()
     {
         var behaviour = DefaultBehaviour() with { TransactionCountLast60s = 7 }; // above 5
-        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Velocity", RuleReasons.HighVelocity, 25, true) };
+        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Velocity", RuleType.HighVelocity, 25, true) };
 
         var matches = _sut.Evaluate(rules, DefaultTransaction(), behaviour, _thresholds);
 
@@ -97,7 +97,7 @@ public class RuleEngineTests
     public void HighVelocity_DoesNotMatch_WhenTxnCountBelowThreshold()
     {
         var behaviour = DefaultBehaviour() with { TransactionCountLast60s = 3 }; // below 5
-        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Velocity", RuleReasons.HighVelocity, 25, true) };
+        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Velocity", RuleType.HighVelocity, 25, true) };
 
         var matches = _sut.Evaluate(rules, DefaultTransaction(), behaviour, _thresholds);
 
@@ -107,7 +107,7 @@ public class RuleEngineTests
     [Fact]
     public void HighVelocity_DoesNotMatch_WhenNoBehaviour()
     {
-        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Velocity", RuleReasons.HighVelocity, 25, true) };
+        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Velocity", RuleType.HighVelocity, 25, true) };
 
         var matches = _sut.Evaluate(rules, DefaultTransaction(), null, _thresholds);
 
@@ -129,7 +129,7 @@ public class RuleEngineTests
             LastKnownLatitude = 51.5074,   // London — way more than 1000km away
             LastKnownLongitude = -0.1278
         };
-        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Geo", RuleReasons.GeoAnomaly, 25, true) };
+        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Geo", RuleType.GeoAnomaly, 25, true) };
 
         var matches = _sut.Evaluate(rules, txn, behaviour, _thresholds);
 
@@ -149,7 +149,7 @@ public class RuleEngineTests
             LastKnownLatitude = -26.1,     // very close — ~12km
             LastKnownLongitude = 28.1
         };
-        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Geo", RuleReasons.GeoAnomaly, 25, true) };
+        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Geo", RuleType.GeoAnomaly, 25, true) };
 
         var matches = _sut.Evaluate(rules, txn, behaviour, _thresholds);
 
@@ -160,7 +160,7 @@ public class RuleEngineTests
     public void GeoAnomaly_DoesNotMatch_WhenNoBehaviourCoordinates()
     {
         var behaviour = DefaultBehaviour() with { LastKnownLatitude = null, LastKnownLongitude = null };
-        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Geo", RuleReasons.GeoAnomaly, 25, true) };
+        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Geo", RuleType.GeoAnomaly, 25, true) };
 
         var matches = _sut.Evaluate(rules, DefaultTransaction(), behaviour, _thresholds);
 
@@ -173,7 +173,7 @@ public class RuleEngineTests
     public void NewDevice_Matches_WhenDeviceNotKnown()
     {
         var behaviour = DefaultBehaviour() with { KnownDeviceIds = new[] { "device-99" } };
-        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Device", RuleReasons.NewDevice, 20, true) };
+        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Device", RuleType.NewDevice, 20, true) };
 
         var matches = _sut.Evaluate(rules, DefaultTransaction(), behaviour, _thresholds);
 
@@ -184,7 +184,7 @@ public class RuleEngineTests
     public void NewDevice_DoesNotMatch_WhenDeviceIsKnown()
     {
         var behaviour = DefaultBehaviour() with { KnownDeviceIds = new[] { "device-1" } };
-        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Device", RuleReasons.NewDevice, 20, true) };
+        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Device", RuleType.NewDevice, 20, true) };
 
         var matches = _sut.Evaluate(rules, DefaultTransaction(), behaviour, _thresholds);
 
@@ -194,7 +194,7 @@ public class RuleEngineTests
     [Fact]
     public void NewDevice_Matches_WhenNoBehaviourData()
     {
-        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Device", RuleReasons.NewDevice, 20, true) };
+        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Device", RuleType.NewDevice, 20, true) };
 
         var matches = _sut.Evaluate(rules, DefaultTransaction(), null, _thresholds);
 
@@ -206,7 +206,7 @@ public class RuleEngineTests
     [Fact]
     public void InactiveRules_AreSkipped()
     {
-        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Device", RuleReasons.NewDevice, 20, false) };
+        var rules = new[] { new RuleDefinition(Guid.NewGuid(), "Device", RuleType.NewDevice, 20, false) };
 
         var matches = _sut.Evaluate(rules, DefaultTransaction(), null, _thresholds);
 
@@ -226,9 +226,9 @@ public class RuleEngineTests
         var txn = DefaultTransaction() with { Amount = 5000m }; // 5x avg
         var rules = new List<RuleDefinition>
         {
-            new(Guid.NewGuid(), "Amount", RuleReasons.HighAmountAnomaly, 30, true),
-            new(Guid.NewGuid(), "Velocity", RuleReasons.HighVelocity, 25, true),
-            new(Guid.NewGuid(), "Device", RuleReasons.NewDevice, 20, true),
+            new(Guid.NewGuid(), "Amount", RuleType.HighAmountAnomaly, 30, true),
+            new(Guid.NewGuid(), "Velocity", RuleType.HighVelocity, 25, true),
+            new(Guid.NewGuid(), "Device", RuleType.NewDevice, 20, true),
         };
 
         var matches = _sut.Evaluate(rules, txn, behaviour, _thresholds);

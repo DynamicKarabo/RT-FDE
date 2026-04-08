@@ -2,6 +2,7 @@ using FraudEngine.Application.EvaluateTransaction;
 using FraudEngine.Application.Validation;
 using FraudEngine.Domain;
 using FraudEngine.Domain.Services;
+using FraudEngine.Api.Health;
 using FraudEngine.Api.Middleware;
 using FraudEngine.Infrastructure;
 using FluentValidation;
@@ -11,6 +12,8 @@ using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 using Serilog;
 using Serilog.Events;
+using StackExchange.Redis;
+using FraudEngine.Infrastructure.Sql;
 
 // ── Serilog — structured JSON logging to Azure Monitor / stdout ──
 Log.Logger = new LoggerConfiguration()
@@ -75,8 +78,8 @@ try
 
     // ── Health checks ──────────────────────────────────────────────
     builder.Services.AddHealthChecks()
-        .AddCheck("live", () => HealthCheckResult.Healthy("Process alive"), tags: new[] { "live" })
-        .AddCheck("ready", () => HealthCheckResult.Healthy("Dependencies ready"), tags: new[] { "ready" });
+        .AddCheck("live", () => HealthCheckResult.Healthy("Process alive"), tags: new[] { "live" });
+    // "ready" check is registered conditionally below (real infra vs stub)
 
     // ── Infrastructure — real implementations (Redis + SQL Server) ─
     // In local/dev environments without Redis/SQL, use stubs via conditional config.
@@ -85,6 +88,8 @@ try
     if (useRealInfra)
     {
         builder.Services.AddFraudInfrastructure(builder.Configuration);
+        builder.Services.AddHealthChecks()
+            .AddCheck<ReadinessHealthCheck>("ready", tags: new[] { "ready" });
     }
     else
     {
@@ -92,6 +97,9 @@ try
         builder.Services.AddSingleton<FraudEngine.Domain.Interfaces.IBehaviourStore, NoOpBehaviourStore>();
         builder.Services.AddSingleton<FraudEngine.Domain.Interfaces.IRuleRepository, NoOpRuleRepository>();
         builder.Services.AddSingleton<FraudEngine.Domain.Interfaces.IFraudDecisionStore, NoOpFraudDecisionStore>();
+        // Stub readiness — always healthy since there's nothing to probe.
+        builder.Services.AddHealthChecks()
+            .AddCheck("ready", () => HealthCheckResult.Healthy("Stub dependencies — no real probe."), tags: new[] { "ready" });
     }
 
     var app = builder.Build();

@@ -4,6 +4,7 @@ using FraudEngine.Infrastructure.Redis;
 using FraudEngine.Infrastructure.Sql;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Polly;
 using StackExchange.Redis;
 
 namespace FraudEngine.Infrastructure;
@@ -24,6 +25,19 @@ public static class ServiceCollectionExtensions
         services.Configure<RedisBehaviourOptions>(
             configuration.GetSection("RedisBehaviour"));
 
+        // ── Polly retry policy for Redis: 2 retries, exponential backoff ──
+        // Strictly scoped to RedisConnectionException only.
+        var redisRetryPolicy = Policy
+            .Handle<RedisConnectionException>()
+            .WaitAndRetryAsync(
+                retryCount: 2,
+                sleepDurationProvider: retryAttempt => TimeSpan.FromMilliseconds(Math.Pow(2, retryAttempt) * 100),
+                onRetry: (exception, _, retryAttempt, _) =>
+                {
+                    // Logged inside the RedisBehaviourStore where TransactionId is available.
+                });
+
+        services.AddSingleton<IAsyncPolicy>(redisRetryPolicy);
         services.AddSingleton<IBehaviourStore, RedisBehaviourStore>();
 
         // ── SQL Server ─────────────────────────────────────────────

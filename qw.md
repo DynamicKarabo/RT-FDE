@@ -1,0 +1,2 @@
+qwen --resume 25bd21cb-e62c-49c4-98b5-900d829e9820
+gemini --resume 1e632131-9703-4126-b899-f2a35bf7c278

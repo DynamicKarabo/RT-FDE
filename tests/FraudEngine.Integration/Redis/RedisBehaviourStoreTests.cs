@@ -1,6 +1,7 @@
 using FraudEngine.Domain;
 using FraudEngine.Infrastructure.Redis;
 using Microsoft.Extensions.Options;
+using Polly;
 using StackExchange.Redis;
 using Testcontainers.Redis;
 
@@ -15,6 +16,9 @@ public class RedisBehaviourStoreTests : IAsyncLifetime
     private IConnectionMultiplexer _connection = null!;
     private RedisBehaviourStore _store = null!;
     private IDatabase _db = null!;
+    private readonly IAsyncPolicy _retryPolicy = Policy
+        .Handle<RedisConnectionException>()
+        .WaitAndRetryAsync(2, retryAttempt => TimeSpan.FromMilliseconds(Math.Pow(2, retryAttempt) * 100));
 
     public async Task InitializeAsync()
     {
@@ -23,7 +27,7 @@ public class RedisBehaviourStoreTests : IAsyncLifetime
         _connection = await ConnectionMultiplexer.ConnectAsync(_redisContainer.GetConnectionString());
         var options = Options.Create(new RedisBehaviourOptions { KeyPrefix = "user" });
         var logger = Microsoft.Extensions.Logging.Abstractions.NullLogger<RedisBehaviourStore>.Instance;
-        _store = new RedisBehaviourStore(_connection, logger, options);
+        _store = new RedisBehaviourStore(_connection, logger, options, _retryPolicy);
         _db = _connection.GetDatabase();
     }
 
