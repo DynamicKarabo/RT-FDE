@@ -1,0 +1,1096 @@
+<?xml version="1.0" encoding="utf-8"?>
+<coverage line-rate="0.9505" branch-rate="1" version="1.9" timestamp="1775663457" lines-covered="250" lines-valid="263" branches-covered="62" branches-valid="62">
+  <sources>
+    <source>/home/karabooliphant/Projects/RT-FDE/src/</source>
+  </sources>
+  <packages>
+    <package name="FraudEngine.Domain" line-rate="0.9170999999999999" branch-rate="1" complexity="111">
+      <classes>
+        <class name="FraudEngine.Domain.BehaviouralContext" filename="FraudEngine.Domain/BehaviouralContext.cs" line-rate="0.8571" branch-rate="1" complexity="7">
+          <methods>
+            <method name="get_TransactionCountLast60s" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="7" branch="False" />
+              </lines>
+            </method>
+            <method name="get_LastKnownIp" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_KnownDeviceIds" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="11" branch="False" />
+              </lines>
+            </method>
+            <method name="get_LastKnownLatitude" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="8" branch="False" />
+              </lines>
+            </method>
+            <method name="get_LastKnownLongitude" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="7" branch="False" />
+              </lines>
+            </method>
+            <method name="get_AverageTransactionAmount" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="20" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.Int32,System.String,System.Collections.Generic.IReadOnlyList`1&lt;System.String&gt;,System.Nullable`1&lt;System.Double&gt;,System.Nullable`1&lt;System.Double&gt;,System.Decimal)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="12" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="7" branch="False" />
+            <line number="9" hits="0" branch="False" />
+            <line number="10" hits="11" branch="False" />
+            <line number="11" hits="8" branch="False" />
+            <line number="12" hits="7" branch="False" />
+            <line number="13" hits="20" branch="False" />
+            <line number="7" hits="12" branch="False" />
+          </lines>
+        </class>
+        <class name="FraudEngine.Domain.FailBehaviourConfig" filename="FraudEngine.Domain/FailBehaviourConfig.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_FailOpen" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="11" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="11" branch="False" />
+          </lines>
+        </class>
+        <class name="FraudEngine.Domain.FraudDecision" filename="FraudEngine.Domain/FraudDecision.cs" line-rate="1" branch-rate="1" complexity="5">
+          <methods>
+            <method name="get_Outcome" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="20" branch="False" />
+              </lines>
+            </method>
+            <method name="get_RiskScore" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="8" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Reasons" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="9" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Timestamp" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="19" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(FraudEngine.Domain.DecisionOutcome,System.Int32,System.Collections.Generic.IReadOnlyList`1&lt;System.String&gt;,System.DateTimeOffset)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="18" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="20" branch="False" />
+            <line number="10" hits="8" branch="False" />
+            <line number="11" hits="9" branch="False" />
+            <line number="12" hits="19" branch="False" />
+            <line number="8" hits="18" branch="False" />
+          </lines>
+        </class>
+        <class name="FraudEngine.Domain.FraudThresholds" filename="FraudEngine.Domain/FraudThresholds.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_ReviewThreshold" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="43" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="6" hits="43" branch="False" />
+          </lines>
+        </class>
+        <class name="FraudEngine.Domain.Result`1" filename="FraudEngine.Domain/Result.cs" line-rate="1" branch-rate="1" complexity="7">
+          <methods>
+            <method name="get_Value" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="16" hits="13" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Error" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="17" hits="8" branch="False" />
+              </lines>
+            </method>
+            <method name="get_IsSuccess" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="18" hits="6" branch="False" />
+              </lines>
+            </method>
+            <method name="get_IsFailure" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="19" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="Success" signature="(T)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="21" hits="6" branch="False" />
+              </lines>
+            </method>
+            <method name="Failure" signature="(FraudEngine.Domain.Errors.Error)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="22" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(T,FraudEngine.Domain.Errors.Error)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="7" branch="False" />
+                <line number="11" hits="7" branch="False" />
+                <line number="12" hits="7" branch="False" />
+                <line number="13" hits="7" branch="False" />
+                <line number="14" hits="7" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="16" hits="13" branch="False" />
+            <line number="17" hits="8" branch="False" />
+            <line number="18" hits="6" branch="False" />
+            <line number="19" hits="1" branch="False" />
+            <line number="21" hits="6" branch="False" />
+            <line number="22" hits="1" branch="False" />
+            <line number="10" hits="7" branch="False" />
+            <line number="11" hits="7" branch="False" />
+            <line number="12" hits="7" branch="False" />
+            <line number="13" hits="7" branch="False" />
+            <line number="14" hits="7" branch="False" />
+          </lines>
+        </class>
+        <class name="FraudEngine.Domain.RuleDefinition" filename="FraudEngine.Domain/RuleDefinition.cs" line-rate="0.6666" branch-rate="1" complexity="6">
+          <methods>
+            <method name="get_RuleId" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_RuleName" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_RuleReason" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="31" branch="False" />
+              </lines>
+            </method>
+            <method name="get_ScoreDelta" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="12" branch="False" />
+              </lines>
+            </method>
+            <method name="get_IsActive" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="40" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.Guid,System.String,System.String,System.Int32,System.Boolean)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="20" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="0" branch="False" />
+            <line number="9" hits="0" branch="False" />
+            <line number="10" hits="31" branch="False" />
+            <line number="11" hits="12" branch="False" />
+            <line number="12" hits="40" branch="False" />
+            <line number="7" hits="20" branch="False" />
+          </lines>
+        </class>
+        <class name="FraudEngine.Domain.RuleEvaluationThresholds" filename="FraudEngine.Domain/RuleEvaluationThresholds.cs" line-rate="1" branch-rate="1" complexity="5">
+          <methods>
+            <method name="get_AmountAnomalyMultiplier" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="4" branch="False" />
+              </lines>
+            </method>
+            <method name="get_HighAmountAbsoluteThreshold" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="2" branch="False" />
+              </lines>
+            </method>
+            <method name="get_MaxTransactionsPer60s" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="4" branch="False" />
+              </lines>
+            </method>
+            <method name="get_MaxGeoDistanceKm" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="14" hits="24" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.Double,System.Decimal,System.Int32,System.Double)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="22" branch="False" />
+                <line number="7" hits="22" branch="False" />
+                <line number="9" hits="22" branch="False" />
+                <line number="11" hits="22" branch="False" />
+                <line number="13" hits="22" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="4" branch="False" />
+            <line number="10" hits="2" branch="False" />
+            <line number="12" hits="4" branch="False" />
+            <line number="14" hits="24" branch="False" />
+            <line number="6" hits="22" branch="False" />
+            <line number="7" hits="22" branch="False" />
+            <line number="9" hits="22" branch="False" />
+            <line number="11" hits="22" branch="False" />
+            <line number="13" hits="22" branch="False" />
+          </lines>
+        </class>
+        <class name="FraudEngine.Domain.RuleMatch" filename="FraudEngine.Domain/RuleMatch.cs" line-rate="1" branch-rate="1" complexity="3">
+          <methods>
+            <method name="get_RuleReason" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="9" branch="False" />
+              </lines>
+            </method>
+            <method name="get_ScoreDelta" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="33" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.String,System.Int32)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="21" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="9" branch="False" />
+            <line number="8" hits="33" branch="False" />
+            <line number="6" hits="21" branch="False" />
+          </lines>
+        </class>
+        <class name="FraudEngine.Domain.TransactionContext" filename="FraudEngine.Domain/TransactionContext.cs" line-rate="0.4545" branch-rate="1" complexity="11">
+          <methods>
+            <method name="get_TransactionId" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_UserId" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Amount" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="11" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Currency" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Timestamp" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_IpAddress" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_DeviceId" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="4" branch="False" />
+              </lines>
+            </method>
+            <method name="get_MerchantId" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="14" hits="0" branch="False" />
+              </lines>
+            </method>
+            <method name="get_LastKnownLatitude" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="6" branch="False" />
+              </lines>
+            </method>
+            <method name="get_LastKnownLongitude" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="16" hits="27" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.Guid,System.Guid,System.Decimal,System.String,System.DateTimeOffset,System.String,System.String,System.String,System.Nullable`1&lt;System.Double&gt;,System.Nullable`1&lt;System.Double&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="21" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="0" branch="False" />
+            <line number="8" hits="0" branch="False" />
+            <line number="9" hits="11" branch="False" />
+            <line number="10" hits="0" branch="False" />
+            <line number="11" hits="0" branch="False" />
+            <line number="12" hits="0" branch="False" />
+            <line number="13" hits="4" branch="False" />
+            <line number="14" hits="0" branch="False" />
+            <line number="15" hits="6" branch="False" />
+            <line number="16" hits="27" branch="False" />
+            <line number="6" hits="21" branch="False" />
+          </lines>
+        </class>
+        <class name="FraudEngine.Domain.Services.DecisionEngine" filename="FraudEngine.Domain/Services/DecisionEngine.cs" line-rate="1" branch-rate="1" complexity="5">
+          <methods>
+            <method name="MapScore" signature="(System.Int32,System.Collections.Generic.IReadOnlyList`1&lt;System.String&gt;,FraudEngine.Domain.FraudThresholds)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="14" hits="16" branch="False" />
+                <line number="15" hits="16" branch="False" />
+                <line number="16" hits="16" branch="False" />
+                <line number="18" hits="16" branch="False" />
+                <line number="19" hits="16" branch="False" />
+              </lines>
+            </method>
+            <method name="ResolveOutcome" signature="(System.Int32,FraudEngine.Domain.FraudThresholds)" line-rate="1" branch-rate="1" complexity="4">
+              <lines>
+                <line number="22" hits="16" branch="False" />
+                <line number="23" hits="16" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="15" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="24" hits="5" branch="False" />
+                <line number="26" hits="11" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="35" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="27" hits="4" branch="False" />
+                <line number="29" hits="7" branch="False" />
+                <line number="30" hits="16" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="14" hits="16" branch="False" />
+            <line number="15" hits="16" branch="False" />
+            <line number="16" hits="16" branch="False" />
+            <line number="18" hits="16" branch="False" />
+            <line number="19" hits="16" branch="False" />
+            <line number="22" hits="16" branch="False" />
+            <line number="23" hits="16" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="15" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="24" hits="5" branch="False" />
+            <line number="26" hits="11" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="35" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="27" hits="4" branch="False" />
+            <line number="29" hits="7" branch="False" />
+            <line number="30" hits="16" branch="False" />
+          </lines>
+        </class>
+        <class name="FraudEngine.Domain.Services.RiskScorer" filename="FraudEngine.Domain/Services/RiskScorer.cs" line-rate="1" branch-rate="1" complexity="4">
+          <methods>
+            <method name="Compute" signature="(System.Collections.Generic.IReadOnlyList`1&lt;FraudEngine.Domain.RuleMatch&gt;)" line-rate="1" branch-rate="1" complexity="4">
+              <lines>
+                <line number="14" hits="10" branch="False" />
+                <line number="15" hits="10" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="12" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="16" hits="6" branch="False" />
+                <line number="18" hits="4" branch="False" />
+                <line number="19" hits="36" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="56" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="20" hits="12" branch="False" />
+                <line number="21" hits="12" branch="False" />
+                <line number="22" hits="12" branch="False" />
+                <line number="24" hits="4" branch="False" />
+                <line number="25" hits="10" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="14" hits="10" branch="False" />
+            <line number="15" hits="10" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="12" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="16" hits="6" branch="False" />
+            <line number="18" hits="4" branch="False" />
+            <line number="19" hits="36" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="56" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="20" hits="12" branch="False" />
+            <line number="21" hits="12" branch="False" />
+            <line number="22" hits="12" branch="False" />
+            <line number="24" hits="4" branch="False" />
+            <line number="25" hits="10" branch="False" />
+          </lines>
+        </class>
+        <class name="FraudEngine.Domain.Services.RuleEngine" filename="FraudEngine.Domain/Services/RuleEngine.cs" line-rate="0.9865999999999999" branch-rate="1" complexity="50">
+          <methods>
+            <method name="Evaluate" signature="(System.Collections.Generic.IReadOnlyList`1&lt;FraudEngine.Domain.RuleDefinition&gt;,FraudEngine.Domain.TransactionContext,FraudEngine.Domain.BehaviouralContext,FraudEngine.Domain.RuleEvaluationThresholds)" line-rate="1" branch-rate="1" complexity="6">
+              <lines>
+                <line number="23" hits="21" branch="False" />
+                <line number="24" hits="21" branch="False" />
+                <line number="26" hits="103" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="83" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="27" hits="20" branch="False" />
+                <line number="28" hits="20" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="44" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="29" hits="1" branch="False" />
+                <line number="31" hits="19" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="64" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="32" hits="12" branch="False" />
+                <line number="33" hits="12" branch="False" />
+                <line number="34" hits="12" branch="False" />
+                <line number="35" hits="19" branch="False" />
+                <line number="37" hits="21" branch="False" />
+                <line number="38" hits="21" branch="False" />
+              </lines>
+            </method>
+            <method name="TryMatch" signature="(FraudEngine.Domain.RuleDefinition,FraudEngine.Domain.TransactionContext,FraudEngine.Domain.BehaviouralContext,FraudEngine.Domain.RuleEvaluationThresholds,FraudEngine.Domain.RuleMatch&amp;)" line-rate="0.9806999999999999" branch-rate="1" complexity="42">
+              <lines>
+                <line number="46" hits="19" branch="False" />
+                <line number="47" hits="19" branch="True" condition-coverage="100% (8/8)">
+                  <conditions>
+                    <condition number="21" type="jump" coverage="100%" />
+                    <condition number="34" type="jump" coverage="100%" />
+                    <condition number="50" type="jump" coverage="100%" />
+                    <condition number="66" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="50" hits="6" branch="True" condition-coverage="100% (4/4)">
+                  <conditions>
+                    <condition number="77" type="jump" coverage="100%" />
+                    <condition number="100" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="51" hits="4" branch="False" />
+                <line number="52" hits="4" branch="False" />
+                <line number="53" hits="4" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="140" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="54" hits="3" branch="False" />
+                <line number="55" hits="3" branch="False" />
+                <line number="56" hits="3" branch="False" />
+                <line number="58" hits="1" branch="False" />
+                <line number="60" hits="3" branch="True" condition-coverage="100% (4/4)">
+                  <conditions>
+                    <condition number="173" type="jump" coverage="100%" />
+                    <condition number="199" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="61" hits="1" branch="False" />
+                <line number="62" hits="1" branch="False" />
+                <line number="63" hits="1" branch="False" />
+                <line number="65" hits="2" branch="False" />
+                <line number="68" hits="5" branch="True" condition-coverage="100% (4/4)">
+                  <conditions>
+                    <condition number="236" type="jump" coverage="100%" />
+                    <condition number="259" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="69" hits="3" branch="False" />
+                <line number="70" hits="3" branch="False" />
+                <line number="71" hits="3" branch="False" />
+                <line number="73" hits="2" branch="False" />
+                <line number="76" hits="3" branch="True" condition-coverage="100% (10/10)">
+                  <conditions>
+                    <condition number="296" type="jump" coverage="100%" />
+                    <condition number="313" type="jump" coverage="100%" />
+                    <condition number="330" type="jump" coverage="100%" />
+                    <condition number="347" type="jump" coverage="100%" />
+                    <condition number="371" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="77" hits="3" branch="False" />
+                <line number="78" hits="3" branch="False" />
+                <line number="79" hits="3" branch="False" />
+                <line number="80" hits="3" branch="False" />
+                <line number="81" hits="2" branch="False" />
+                <line number="82" hits="2" branch="False" />
+                <line number="83" hits="2" branch="False" />
+                <line number="84" hits="2" branch="False" />
+                <line number="85" hits="2" branch="False" />
+                <line number="86" hits="2" branch="False" />
+                <line number="88" hits="2" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="455" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="89" hits="1" branch="False" />
+                <line number="90" hits="1" branch="False" />
+                <line number="91" hits="1" branch="False" />
+                <line number="93" hits="1" branch="False" />
+                <line number="94" hits="2" branch="False" />
+                <line number="97" hits="5" branch="True" condition-coverage="100% (6/6)">
+                  <conditions>
+                    <condition number="487" type="jump" coverage="100%" />
+                    <condition number="501" type="jump" coverage="100%" />
+                    <condition number="530" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="98" hits="5" branch="False" />
+                <line number="99" hits="5" branch="False" />
+                <line number="100" hits="3" branch="False" />
+                <line number="101" hits="3" branch="False" />
+                <line number="102" hits="3" branch="False" />
+                <line number="105" hits="2" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="566" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="106" hits="1" branch="False" />
+                <line number="107" hits="1" branch="False" />
+                <line number="108" hits="1" branch="False" />
+                <line number="110" hits="1" branch="False" />
+                <line number="114" hits="0" branch="False" />
+                <line number="117" hits="7" branch="False" />
+                <line number="118" hits="7" branch="False" />
+                <line number="119" hits="19" branch="False" />
+              </lines>
+            </method>
+            <method name="HaversineDistance" signature="(System.Double,System.Double,System.Double,System.Double)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="125" hits="2" branch="False" />
+                <line number="127" hits="2" branch="False" />
+                <line number="128" hits="2" branch="False" />
+                <line number="129" hits="2" branch="False" />
+                <line number="130" hits="2" branch="False" />
+                <line number="131" hits="2" branch="False" />
+                <line number="132" hits="2" branch="False" />
+                <line number="133" hits="2" branch="False" />
+                <line number="134" hits="2" branch="False" />
+              </lines>
+            </method>
+            <method name="ToRadians" signature="(System.Double)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="136" hits="8" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="23" hits="21" branch="False" />
+            <line number="24" hits="21" branch="False" />
+            <line number="26" hits="103" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="83" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="27" hits="20" branch="False" />
+            <line number="28" hits="20" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="44" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="29" hits="1" branch="False" />
+            <line number="31" hits="19" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="64" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="32" hits="12" branch="False" />
+            <line number="33" hits="12" branch="False" />
+            <line number="34" hits="12" branch="False" />
+            <line number="35" hits="19" branch="False" />
+            <line number="37" hits="21" branch="False" />
+            <line number="38" hits="21" branch="False" />
+            <line number="46" hits="19" branch="False" />
+            <line number="47" hits="19" branch="True" condition-coverage="100% (8/8)">
+              <conditions>
+                <condition number="21" type="jump" coverage="100%" />
+                <condition number="34" type="jump" coverage="100%" />
+                <condition number="50" type="jump" coverage="100%" />
+                <condition number="66" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="50" hits="6" branch="True" condition-coverage="100% (4/4)">
+              <conditions>
+                <condition number="77" type="jump" coverage="100%" />
+                <condition number="100" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="51" hits="4" branch="False" />
+            <line number="52" hits="4" branch="False" />
+            <line number="53" hits="4" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="140" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="54" hits="3" branch="False" />
+            <line number="55" hits="3" branch="False" />
+            <line number="56" hits="3" branch="False" />
+            <line number="58" hits="1" branch="False" />
+            <line number="60" hits="3" branch="True" condition-coverage="100% (4/4)">
+              <conditions>
+                <condition number="173" type="jump" coverage="100%" />
+                <condition number="199" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="61" hits="1" branch="False" />
+            <line number="62" hits="1" branch="False" />
+            <line number="63" hits="1" branch="False" />
+            <line number="65" hits="2" branch="False" />
+            <line number="68" hits="5" branch="True" condition-coverage="100% (4/4)">
+              <conditions>
+                <condition number="236" type="jump" coverage="100%" />
+                <condition number="259" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="69" hits="3" branch="False" />
+            <line number="70" hits="3" branch="False" />
+            <line number="71" hits="3" branch="False" />
+            <line number="73" hits="2" branch="False" />
+            <line number="76" hits="3" branch="True" condition-coverage="100% (10/10)">
+              <conditions>
+                <condition number="296" type="jump" coverage="100%" />
+                <condition number="313" type="jump" coverage="100%" />
+                <condition number="330" type="jump" coverage="100%" />
+                <condition number="347" type="jump" coverage="100%" />
+                <condition number="371" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="77" hits="3" branch="False" />
+            <line number="78" hits="3" branch="False" />
+            <line number="79" hits="3" branch="False" />
+            <line number="80" hits="3" branch="False" />
+            <line number="81" hits="2" branch="False" />
+            <line number="82" hits="2" branch="False" />
+            <line number="83" hits="2" branch="False" />
+            <line number="84" hits="2" branch="False" />
+            <line number="85" hits="2" branch="False" />
+            <line number="86" hits="2" branch="False" />
+            <line number="88" hits="2" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="455" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="89" hits="1" branch="False" />
+            <line number="90" hits="1" branch="False" />
+            <line number="91" hits="1" branch="False" />
+            <line number="93" hits="1" branch="False" />
+            <line number="94" hits="2" branch="False" />
+            <line number="97" hits="5" branch="True" condition-coverage="100% (6/6)">
+              <conditions>
+                <condition number="487" type="jump" coverage="100%" />
+                <condition number="501" type="jump" coverage="100%" />
+                <condition number="530" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="98" hits="5" branch="False" />
+            <line number="99" hits="5" branch="False" />
+            <line number="100" hits="3" branch="False" />
+            <line number="101" hits="3" branch="False" />
+            <line number="102" hits="3" branch="False" />
+            <line number="105" hits="2" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="566" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="106" hits="1" branch="False" />
+            <line number="107" hits="1" branch="False" />
+            <line number="108" hits="1" branch="False" />
+            <line number="110" hits="1" branch="False" />
+            <line number="114" hits="0" branch="False" />
+            <line number="117" hits="7" branch="False" />
+            <line number="118" hits="7" branch="False" />
+            <line number="119" hits="19" branch="False" />
+            <line number="125" hits="2" branch="False" />
+            <line number="127" hits="2" branch="False" />
+            <line number="128" hits="2" branch="False" />
+            <line number="129" hits="2" branch="False" />
+            <line number="130" hits="2" branch="False" />
+            <line number="131" hits="2" branch="False" />
+            <line number="132" hits="2" branch="False" />
+            <line number="133" hits="2" branch="False" />
+            <line number="134" hits="2" branch="False" />
+            <line number="136" hits="8" branch="False" />
+          </lines>
+        </class>
+        <class name="FraudEngine.Domain.Errors.BehaviourStoreUnavailableException" filename="FraudEngine.Domain/Errors/BehaviourStoreUnavailableException.cs" line-rate="0.5" branch-rate="1" complexity="2">
+          <methods>
+            <method name=".ctor" signature="(System.String,System.Exception)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="6" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="6" branch="False" />
+            <line number="11" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="FraudEngine.Domain.Errors.Error" filename="FraudEngine.Domain/Errors/Error.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Message" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="6" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="FraudEngine.Domain.Errors.Error/NotFound" filename="FraudEngine.Domain/Errors/Error.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Detail" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="0" branch="False" />
+          </lines>
+        </class>
+        <class name="FraudEngine.Domain.Errors.Error/Infrastructure" filename="FraudEngine.Domain/Errors/Error.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Detail" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="1" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="1" branch="False" />
+          </lines>
+        </class>
+        <class name="FraudEngine.Domain.Errors.Error/Validation" filename="FraudEngine.Domain/Errors/Error.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="get_Detail" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="0" branch="False" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="FraudEngine.Application" line-rate="1" branch-rate="1" complexity="9">
+      <classes>
+        <class name="FraudEngine.Application.Validation.EvaluateTransactionRequestValidator" filename="FraudEngine.Application/Validation/EvaluateTransactionRequestValidator.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="11" branch="False" />
+                <line number="12" hits="11" branch="False" />
+                <line number="13" hits="11" branch="False" />
+                <line number="14" hits="11" branch="False" />
+                <line number="16" hits="11" branch="False" />
+                <line number="17" hits="11" branch="False" />
+                <line number="19" hits="11" branch="False" />
+                <line number="20" hits="11" branch="False" />
+                <line number="22" hits="11" branch="False" />
+                <line number="23" hits="11" branch="False" />
+                <line number="24" hits="11" branch="False" />
+                <line number="26" hits="11" branch="False" />
+                <line number="27" hits="11" branch="False" />
+                <line number="29" hits="11" branch="False" />
+                <line number="30" hits="11" branch="False" />
+                <line number="32" hits="11" branch="False" />
+                <line number="33" hits="11" branch="False" />
+                <line number="35" hits="11" branch="False" />
+                <line number="36" hits="11" branch="False" />
+                <line number="37" hits="11" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="11" hits="11" branch="False" />
+            <line number="12" hits="11" branch="False" />
+            <line number="13" hits="11" branch="False" />
+            <line number="14" hits="11" branch="False" />
+            <line number="16" hits="11" branch="False" />
+            <line number="17" hits="11" branch="False" />
+            <line number="19" hits="11" branch="False" />
+            <line number="20" hits="11" branch="False" />
+            <line number="22" hits="11" branch="False" />
+            <line number="23" hits="11" branch="False" />
+            <line number="24" hits="11" branch="False" />
+            <line number="26" hits="11" branch="False" />
+            <line number="27" hits="11" branch="False" />
+            <line number="29" hits="11" branch="False" />
+            <line number="30" hits="11" branch="False" />
+            <line number="32" hits="11" branch="False" />
+            <line number="33" hits="11" branch="False" />
+            <line number="35" hits="11" branch="False" />
+            <line number="36" hits="11" branch="False" />
+            <line number="37" hits="11" branch="False" />
+          </lines>
+        </class>
+        <class name="FraudEngine.Application.EvaluateTransaction.EvaluateTransactionUseCase" filename="FraudEngine.Application/EvaluateTransaction/EvaluateTransactionUseCase.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name=".ctor" signature="(FraudEngine.Domain.Interfaces.IFraudDecisionStore,FraudEngine.Domain.Interfaces.IBehaviourStore,FraudEngine.Domain.Interfaces.IRuleRepository,FraudEngine.Domain.Services.RuleEngine,FraudEngine.Domain.Services.RiskScorer,FraudEngine.Domain.Services.DecisionEngine,Microsoft.Extensions.Options.IOptions`1&lt;FraudEngine.Domain.FraudThresholds&gt;,Microsoft.Extensions.Options.IOptions`1&lt;FraudEngine.Domain.RuleEvaluationThresholds&gt;,Microsoft.Extensions.Options.IOptions`1&lt;FraudEngine.Domain.FailBehaviourConfig&gt;,Microsoft.Extensions.Logging.ILogger`1&lt;FraudEngine.Application.EvaluateTransaction.EvaluateTransactionUseCase&gt;)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="34" hits="7" branch="False" />
+                <line number="35" hits="7" branch="False" />
+                <line number="36" hits="7" branch="False" />
+                <line number="37" hits="7" branch="False" />
+                <line number="38" hits="7" branch="False" />
+                <line number="39" hits="7" branch="False" />
+                <line number="40" hits="7" branch="False" />
+                <line number="41" hits="7" branch="False" />
+                <line number="42" hits="7" branch="False" />
+                <line number="43" hits="7" branch="False" />
+                <line number="44" hits="7" branch="False" />
+                <line number="45" hits="7" branch="False" />
+                <line number="46" hits="7" branch="False" />
+                <line number="47" hits="7" branch="False" />
+                <line number="48" hits="7" branch="False" />
+                <line number="49" hits="7" branch="False" />
+                <line number="50" hits="7" branch="False" />
+                <line number="51" hits="7" branch="False" />
+                <line number="52" hits="7" branch="False" />
+                <line number="53" hits="7" branch="False" />
+                <line number="54" hits="7" branch="False" />
+                <line number="55" hits="7" branch="False" />
+                <line number="56" hits="7" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="34" hits="7" branch="False" />
+            <line number="35" hits="7" branch="False" />
+            <line number="36" hits="7" branch="False" />
+            <line number="37" hits="7" branch="False" />
+            <line number="38" hits="7" branch="False" />
+            <line number="39" hits="7" branch="False" />
+            <line number="40" hits="7" branch="False" />
+            <line number="41" hits="7" branch="False" />
+            <line number="42" hits="7" branch="False" />
+            <line number="43" hits="7" branch="False" />
+            <line number="44" hits="7" branch="False" />
+            <line number="45" hits="7" branch="False" />
+            <line number="46" hits="7" branch="False" />
+            <line number="47" hits="7" branch="False" />
+            <line number="48" hits="7" branch="False" />
+            <line number="49" hits="7" branch="False" />
+            <line number="50" hits="7" branch="False" />
+            <line number="51" hits="7" branch="False" />
+            <line number="52" hits="7" branch="False" />
+            <line number="53" hits="7" branch="False" />
+            <line number="54" hits="7" branch="False" />
+            <line number="55" hits="7" branch="False" />
+            <line number="56" hits="7" branch="False" />
+          </lines>
+        </class>
+        <class name="FraudEngine.Application.EvaluateTransaction.EvaluateTransactionUseCase/&lt;&gt;c" filename="FraudEngine.Application/EvaluateTransaction/EvaluateTransactionUseCase.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="&lt;ExecuteAsync&gt;b__11_0" signature="(FraudEngine.Domain.RuleMatch)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="112" hits="9" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="112" hits="9" branch="False" />
+          </lines>
+        </class>
+        <class name="FraudEngine.Application.EvaluateTransaction.EvaluateTransactionUseCase/&lt;ExecuteAsync&gt;d__11" filename="FraudEngine.Application/EvaluateTransaction/EvaluateTransactionUseCase.cs" line-rate="1" branch-rate="1" complexity="6">
+          <methods>
+            <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="6">
+              <lines>
+                <line number="61" hits="7" branch="False" />
+                <line number="62" hits="7" branch="False" />
+                <line number="65" hits="7" branch="False" />
+                <line number="66" hits="7" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="244" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="67" hits="1" branch="False" />
+                <line number="68" hits="1" branch="False" />
+                <line number="69" hits="1" branch="False" />
+                <line number="70" hits="1" branch="False" />
+                <line number="71" hits="1" branch="False" />
+                <line number="76" hits="6" branch="False" />
+                <line number="78" hits="6" branch="False" />
+                <line number="79" hits="6" branch="False" />
+                <line number="80" hits="4" branch="False" />
+                <line number="81" hits="2" branch="False" />
+                <line number="82" hits="2" branch="False" />
+                <line number="83" hits="2" branch="False" />
+                <line number="84" hits="2" branch="False" />
+                <line number="85" hits="2" branch="False" />
+                <line number="86" hits="2" branch="False" />
+                <line number="87" hits="2" branch="False" />
+                <line number="90" hits="6" branch="False" />
+                <line number="91" hits="6" branch="False" />
+                <line number="92" hits="6" branch="False" />
+                <line number="93" hits="6" branch="False" />
+                <line number="94" hits="6" branch="False" />
+                <line number="95" hits="6" branch="False" />
+                <line number="96" hits="6" branch="False" />
+                <line number="97" hits="6" branch="False" />
+                <line number="98" hits="6" branch="False" />
+                <line number="99" hits="6" branch="False" />
+                <line number="100" hits="6" branch="False" />
+                <line number="103" hits="6" branch="False" />
+                <line number="106" hits="6" branch="False" />
+                <line number="109" hits="6" branch="False" />
+                <line number="113" hits="6" branch="False" />
+                <line number="117" hits="6" branch="False" />
+                <line number="118" hits="6" branch="False" />
+                <line number="119" hits="4" branch="False" />
+                <line number="120" hits="2" branch="False" />
+                <line number="121" hits="2" branch="False" />
+                <line number="122" hits="2" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="1316" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="123" hits="2" branch="False" />
+                <line number="124" hits="2" branch="False" />
+                <line number="125" hits="2" branch="False" />
+                <line number="129" hits="2" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="1357" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="130" hits="1" branch="False" />
+                <line number="131" hits="1" branch="False" />
+                <line number="132" hits="1" branch="False" />
+                <line number="133" hits="1" branch="False" />
+                <line number="135" hits="1" branch="False" />
+                <line number="136" hits="1" branch="False" />
+                <line number="137" hits="1" branch="False" />
+                <line number="138" hits="1" branch="False" />
+                <line number="139" hits="1" branch="False" />
+                <line number="141" hits="1" branch="False" />
+                <line number="144" hits="1" branch="False" />
+                <line number="145" hits="1" branch="False" />
+                <line number="148" hits="4" branch="False" />
+                <line number="149" hits="4" branch="False" />
+                <line number="150" hits="4" branch="False" />
+                <line number="152" hits="4" branch="False" />
+                <line number="153" hits="7" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="61" hits="7" branch="False" />
+            <line number="62" hits="7" branch="False" />
+            <line number="65" hits="7" branch="False" />
+            <line number="66" hits="7" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="244" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="67" hits="1" branch="False" />
+            <line number="68" hits="1" branch="False" />
+            <line number="69" hits="1" branch="False" />
+            <line number="70" hits="1" branch="False" />
+            <line number="71" hits="1" branch="False" />
+            <line number="76" hits="6" branch="False" />
+            <line number="78" hits="6" branch="False" />
+            <line number="79" hits="6" branch="False" />
+            <line number="80" hits="4" branch="False" />
+            <line number="81" hits="2" branch="False" />
+            <line number="82" hits="2" branch="False" />
+            <line number="83" hits="2" branch="False" />
+            <line number="84" hits="2" branch="False" />
+            <line number="85" hits="2" branch="False" />
+            <line number="86" hits="2" branch="False" />
+            <line number="87" hits="2" branch="False" />
+            <line number="90" hits="6" branch="False" />
+            <line number="91" hits="6" branch="False" />
+            <line number="92" hits="6" branch="False" />
+            <line number="93" hits="6" branch="False" />
+            <line number="94" hits="6" branch="False" />
+            <line number="95" hits="6" branch="False" />
+            <line number="96" hits="6" branch="False" />
+            <line number="97" hits="6" branch="False" />
+            <line number="98" hits="6" branch="False" />
+            <line number="99" hits="6" branch="False" />
+            <line number="100" hits="6" branch="False" />
+            <line number="103" hits="6" branch="False" />
+            <line number="106" hits="6" branch="False" />
+            <line number="109" hits="6" branch="False" />
+            <line number="113" hits="6" branch="False" />
+            <line number="117" hits="6" branch="False" />
+            <line number="118" hits="6" branch="False" />
+            <line number="119" hits="4" branch="False" />
+            <line number="120" hits="2" branch="False" />
+            <line number="121" hits="2" branch="False" />
+            <line number="122" hits="2" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="1316" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="123" hits="2" branch="False" />
+            <line number="124" hits="2" branch="False" />
+            <line number="125" hits="2" branch="False" />
+            <line number="129" hits="2" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="1357" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="130" hits="1" branch="False" />
+            <line number="131" hits="1" branch="False" />
+            <line number="132" hits="1" branch="False" />
+            <line number="133" hits="1" branch="False" />
+            <line number="135" hits="1" branch="False" />
+            <line number="136" hits="1" branch="False" />
+            <line number="137" hits="1" branch="False" />
+            <line number="138" hits="1" branch="False" />
+            <line number="139" hits="1" branch="False" />
+            <line number="141" hits="1" branch="False" />
+            <line number="144" hits="1" branch="False" />
+            <line number="145" hits="1" branch="False" />
+            <line number="148" hits="4" branch="False" />
+            <line number="149" hits="4" branch="False" />
+            <line number="150" hits="4" branch="False" />
+            <line number="152" hits="4" branch="False" />
+            <line number="153" hits="7" branch="False" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>

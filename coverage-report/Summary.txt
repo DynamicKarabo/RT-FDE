@@ -1,0 +1,40 @@
+Summary
+  Generated on: 2026/04/08 - 17:51:11
+  Coverage date: 2026/04/08 - 16:59:27 - 2026/04/08 - 17:50:57
+  Parser: MultiReport (2x Cobertura)
+  Assemblies: 2
+  Classes: 16
+  Files: 16
+  Line coverage: 95.4%
+  Covered lines: 272
+  Uncovered lines: 13
+  Coverable lines: 285
+  Total lines: 520
+  Branch coverage: 100% (68 of 68)
+  Covered branches: 68
+  Total branches: 68
+  Method coverage: 82.6% (57 of 69)
+  Full method coverage: 81.1% (56 of 69)
+  Covered methods: 57
+  Fully covered methods: 56
+  Total methods: 69
+
+FraudEngine.Application                                                     100%
+  FraudEngine.Application.EvaluateTransaction.EvaluateTransactionUseCase    100%
+  FraudEngine.Application.Validation.EvaluateTransactionRequestValidator    100%
+
+FraudEngine.Domain                                                         91.8%
+  FraudEngine.Domain.BehaviouralContext                                    85.7%
+  FraudEngine.Domain.Errors.BehaviourStoreUnavailableException               50%
+  FraudEngine.Domain.Errors.Error                                            50%
+  FraudEngine.Domain.FailBehaviourConfig                                    100%
+  FraudEngine.Domain.FraudDecision                                          100%
+  FraudEngine.Domain.FraudThresholds                                        100%
+  FraudEngine.Domain.Result<T>                                              100%
+  FraudEngine.Domain.RuleDefinition                                        66.6%
+  FraudEngine.Domain.RuleEvaluationThresholds                               100%
+  FraudEngine.Domain.RuleMatch                                              100%
+  FraudEngine.Domain.Services.DecisionEngine                                100%
+  FraudEngine.Domain.Services.RiskScorer                                    100%
+  FraudEngine.Domain.Services.RuleEngine                                   98.6%
+  FraudEngine.Domain.TransactionContext                                    45.4%

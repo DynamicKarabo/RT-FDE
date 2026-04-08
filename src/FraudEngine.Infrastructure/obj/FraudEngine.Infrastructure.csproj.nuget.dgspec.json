@@ -1,0 +1,298 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Infrastructure/FraudEngine.Infrastructure.csproj": {}
+  },
+  "projects": {
+    "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Application/FraudEngine.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Application/FraudEngine.Application.csproj",
+        "projectName": "FraudEngine.Application",
+        "projectPath": "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Application/FraudEngine.Application.csproj",
+        "packagesPath": "/home/karabooliphant/.nuget/packages/",
+        "outputPath": "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/karabooliphant/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Contracts/FraudEngine.Contracts.csproj": {
+                "projectPath": "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Contracts/FraudEngine.Contracts.csproj"
+              },
+              "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Domain/FraudEngine.Domain.csproj": {
+                "projectPath": "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Domain/FraudEngine.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[12.1.1, )"
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[10.0.5, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[10.0.5, )"
+            },
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[10.0.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/karabooliphant/.dotnet/sdk/9.0.312/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Contracts/FraudEngine.Contracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Contracts/FraudEngine.Contracts.csproj",
+        "projectName": "FraudEngine.Contracts",
+        "projectPath": "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Contracts/FraudEngine.Contracts.csproj",
+        "packagesPath": "/home/karabooliphant/.nuget/packages/",
+        "outputPath": "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Contracts/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/karabooliphant/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Domain/FraudEngine.Domain.csproj": {
+                "projectPath": "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Domain/FraudEngine.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/karabooliphant/.dotnet/sdk/9.0.312/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Domain/FraudEngine.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Domain/FraudEngine.Domain.csproj",
+        "projectName": "FraudEngine.Domain",
+        "projectPath": "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Domain/FraudEngine.Domain.csproj",
+        "packagesPath": "/home/karabooliphant/.nuget/packages/",
+        "outputPath": "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/karabooliphant/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/karabooliphant/.dotnet/sdk/9.0.312/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Infrastructure/FraudEngine.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Infrastructure/FraudEngine.Infrastructure.csproj",
+        "projectName": "FraudEngine.Infrastructure",
+        "projectPath": "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Infrastructure/FraudEngine.Infrastructure.csproj",
+        "packagesPath": "/home/karabooliphant/.nuget/packages/",
+        "outputPath": "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/karabooliphant/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Application/FraudEngine.Application.csproj": {
+                "projectPath": "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Application/FraudEngine.Application.csproj"
+              },
+              "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Domain/FraudEngine.Domain.csproj": {
+                "projectPath": "/home/karabooliphant/Projects/RT-FDE/src/FraudEngine.Domain/FraudEngine.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Options.ConfigurationExtensions": {
+              "target": "Package",
+              "version": "[10.0.5, )"
+            },
+            "Polly": {
+              "target": "Package",
+              "version": "[8.6.6, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.12.14, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/karabooliphant/.dotnet/sdk/9.0.312/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
