@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import { mockRules } from '../data/mockData';
 import { Shield, ShieldOff } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Separator } from '@/components/ui/separator';
+import { Switch } from '@/components/ui/switch';
 
 export default function Rules() {
   const [rules, setRules] = useState(mockRules);
@@ -20,35 +24,32 @@ export default function Rules() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
         {rules.map((rule) => (
-          <div key={rule.id} className="bg-white rounded-lg shadow-sm border border-slate-200 p-5 flex flex-col">
-            <div className="flex justify-between items-start mb-4">
-              <div className="flex items-center space-x-3">
-                <div className={`p-2 rounded-md ${rule.active ? 'bg-emerald-100 text-emerald-600' : 'bg-slate-100 text-slate-400'}`}>
-                  {rule.active ? <Shield size={20} /> : <ShieldOff size={20} />}
+          <Card key={rule.id}>
+            <CardHeader className="pb-3">
+              <div className="flex justify-between items-start">
+                <div className="flex items-center space-x-3">
+                  <div className={`p-2 rounded-md ${rule.active ? 'bg-emerald-100 text-emerald-600' : 'bg-slate-100 text-slate-400'}`}>
+                    {rule.active ? <Shield size={20} /> : <ShieldOff size={20} />}
+                  </div>
+                  <CardTitle className="text-base">{rule.name}</CardTitle>
                 </div>
-                <h3 className="font-semibold text-slate-800">{rule.name}</h3>
+                <Switch 
+                  checked={rule.active} 
+                  onCheckedChange={() => toggleRule(rule.id)}
+                />
               </div>
-              <button 
-                onClick={() => toggleRule(rule.id)}
-                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 ${
-                  rule.active ? 'bg-emerald-500' : 'bg-slate-300'
-                }`}
-              >
-                <span className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                  rule.active ? 'translate-x-6' : 'translate-x-1'
-                }`} />
-              </button>
-            </div>
-            
-            <p className="text-sm text-slate-600 flex-grow">{rule.description}</p>
-            
-            <div className="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center text-xs">
-              <span className="text-slate-400">ID: {rule.id}</span>
-              <span className={`font-medium ${rule.active ? 'text-emerald-600' : 'text-slate-500'}`}>
-                {rule.active ? 'Active' : 'Disabled'}
-              </span>
-            </div>
-          </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-slate-600 mb-4">{rule.description}</p>
+              <Separator className="mb-3" />
+              <div className="flex justify-between items-center text-xs">
+                <span className="text-slate-400">ID: {rule.id}</span>
+                <Badge variant={rule.active ? 'default' : 'secondary'}>
+                  {rule.active ? 'Active' : 'Disabled'}
+                </Badge>
+              </div>
+            </CardContent>
+          </Card>
         ))}
       </div>
     </div>

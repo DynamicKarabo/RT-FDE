@@ -1,6 +1,11 @@
 import { useState } from 'react';
 import { mockTransactions } from '../data/mockData';
 import { Filter, ArrowUpDown } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { Badge } from '@/components/ui/badge';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/ui/button';
 
 export default function Transactions() {
   const [filterStatus, setFilterStatus] = useState<string>('All');
@@ -33,57 +38,67 @@ export default function Transactions() {
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold text-slate-800">Transactions</h1>
         
-        <div className="flex items-center space-x-2 bg-white px-3 py-2 rounded-md border border-slate-200 shadow-sm">
-          <Filter size={18} className="text-slate-400" />
-          <select 
-            className="bg-transparent border-none text-sm focus:ring-0 text-slate-600 cursor-pointer outline-none"
-            value={filterStatus}
-            onChange={(e) => setFilterStatus(e.target.value)}
-          >
-            <option value="All">All Statuses</option>
-            <option value="Approved">Approved</option>
-            <option value="Declined">Declined</option>
-            <option value="Pending">Pending</option>
-          </select>
-        </div>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline" size="sm">
+              <Filter className="mr-2 h-4 w-4" />
+              {filterStatus === 'All' ? 'All Statuses' : filterStatus}
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            <DropdownMenuItem onClick={() => setFilterStatus('All')}>All Statuses</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => setFilterStatus('Approved')}>Approved</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => setFilterStatus('Declined')}>Declined</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => setFilterStatus('Pending')}>Pending</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       </div>
 
-      <div className="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm text-left">
-            <thead className="text-xs text-slate-500 uppercase bg-slate-50 border-b border-slate-200">
-              <tr>
-                <th className="px-6 py-4">ID</th>
-                <th className="px-6 py-4 cursor-pointer hover:bg-slate-100" onClick={() => handleSort('date')}>
+      <Card>
+        <CardContent className="p-0">
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>ID</TableHead>
+                <TableHead 
+                  className="cursor-pointer hover:bg-slate-50"
+                  onClick={() => handleSort('date')}
+                >
                   <div className="flex items-center space-x-1">
                     <span>Date</span>
                     <ArrowUpDown size={14} />
                   </div>
-                </th>
-                <th className="px-6 py-4">Merchant</th>
-                <th className="px-6 py-4 cursor-pointer hover:bg-slate-100" onClick={() => handleSort('amount')}>
+                </TableHead>
+                <TableHead>Merchant</TableHead>
+                <TableHead 
+                  className="cursor-pointer hover:bg-slate-50"
+                  onClick={() => handleSort('amount')}
+                >
                   <div className="flex items-center space-x-1">
                     <span>Amount</span>
                     <ArrowUpDown size={14} />
                   </div>
-                </th>
-                <th className="px-6 py-4 cursor-pointer hover:bg-slate-100" onClick={() => handleSort('riskScore')}>
+                </TableHead>
+                <TableHead 
+                  className="cursor-pointer hover:bg-slate-50"
+                  onClick={() => handleSort('riskScore')}
+                >
                   <div className="flex items-center space-x-1">
                     <span>Risk Score</span>
                     <ArrowUpDown size={14} />
                   </div>
-                </th>
-                <th className="px-6 py-4">Status</th>
-              </tr>
-            </thead>
-            <tbody>
+                </TableHead>
+                <TableHead>Status</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
               {filteredTransactions.map((tx) => (
-                <tr key={tx.id} className="border-b border-slate-100 last:border-0 hover:bg-slate-50 transition-colors">
-                  <td className="px-6 py-4 font-medium text-slate-900">{tx.id}</td>
-                  <td className="px-6 py-4 text-slate-600">{tx.date}</td>
-                  <td className="px-6 py-4 text-slate-600">{tx.merchant}</td>
-                  <td className="px-6 py-4 text-slate-900 font-medium">${tx.amount.toFixed(2)}</td>
-                  <td className="px-6 py-4">
+                <TableRow key={tx.id}>
+                  <TableCell className="font-medium">{tx.id}</TableCell>
+                  <TableCell>{tx.date}</TableCell>
+                  <TableCell>{tx.merchant}</TableCell>
+                  <TableCell className="font-medium">${tx.amount.toFixed(2)}</TableCell>
+                  <TableCell>
                     <span className={`font-semibold ${
                       tx.riskScore > 75 ? 'text-red-600' : 
                       tx.riskScore > 40 ? 'text-amber-600' : 
@@ -91,22 +106,22 @@ export default function Transactions() {
                     }`}>
                       {tx.riskScore}
                     </span>
-                  </td>
-                  <td className="px-6 py-4">
-                    <span className={`px-2.5 py-1 rounded-full text-xs font-medium ${
-                      tx.status === 'Approved' ? 'bg-emerald-100 text-emerald-700' :
-                      tx.status === 'Declined' ? 'bg-red-100 text-red-700' :
-                      'bg-amber-100 text-amber-700'
-                    }`}>
+                  </TableCell>
+                  <TableCell>
+                    <Badge variant={
+                      tx.status === 'Approved' ? 'default' :
+                      tx.status === 'Declined' ? 'destructive' :
+                      'secondary'
+                    }>
                       {tx.status}
-                    </span>
-                  </td>
-                </tr>
+                    </Badge>
+                  </TableCell>
+                </TableRow>
               ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
+            </TableBody>
+          </Table>
+        </CardContent>
+      </Card>
     </div>
   );
 }
